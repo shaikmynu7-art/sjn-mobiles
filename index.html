@@ -73,6 +73,36 @@
 
 <section>
     <h2>Our Services</h2>
+    <section>
+    <h2>Customer Reviews</h2>
+
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin-bottom:10px;">
+        ⭐⭐⭐⭐⭐
+        <p>
+            “Very good service and reasonable prices. Display replacement was done quickly.
+            Trusted shop in our village.”
+        </p>
+        <strong>– Ramesh, Anantha Sagaram</strong>
+    </div>
+
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin-bottom:10px;">
+        ⭐⭐⭐⭐⭐
+        <p>
+            “Bought a second-hand mobile here. Condition was excellent and price was affordable.
+            Owner explains everything clearly.”
+        </p>
+        <strong>– Suresh, Nearby Village</strong>
+    </div>
+
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px;">
+        ⭐⭐⭐⭐☆
+        <p>
+            “Good place for mobile repair and accessories. Battery change done at low cost.
+            Recommended.”
+        </p>
+        <strong>– Lakshmi, Anantha Sagaram</strong>
+    </div>
+</section>
     <ul class="services">
         <li>✔ New & Used Mobile Phones</li>
         <li>✔ Buy & Sell Old Mobiles</li>
@@ -87,6 +117,7 @@
     <ul style="list-style:none; padding-left:0;">
         <li><strong>Monday – Saturday:</strong> 9:00 AM – 9:00 PM</li>
         <li><strong>Sunday:</strong> 10:00 AM – 6:00 PM</li>
+        <p id="shop-status" style="font-weight:bold; font-size:18px;"></p>
     </ul>
     <h2>Contact Us</h2>
     <p><strong>Proprietor:</strong> Shaik Salman</p>
@@ -132,5 +163,36 @@
     background-color: #1ebe5b;
 }
 </style>
+<script>
+function checkShopStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const currentTime = hour + minute / 60;
+
+    let openTime, closeTime;
+
+    if (day === 0) { // Sunday
+        openTime = 10;
+        closeTime = 18;
+    } else { // Monday - Saturday
+        openTime = 9;
+        closeTime = 21;
+    }
+
+    const statusEl = document.getElementById("shop-status");
+
+    if (currentTime >= openTime && currentTime < closeTime) {
+        statusEl.innerHTML = "🟢 Open Now";
+        statusEl.style.color = "green";
+    } else {
+        statusEl.innerHTML = "🔴 Closed";
+        statusEl.style.color = "red";
+    }
+}
+
+checkShopStatus();
+</script>
 </body>
 </html>

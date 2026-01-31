@@ -165,7 +165,43 @@
         <button>Call Now</button>
     </a>
 </section>
+<a href="#feedback">Give Feedback</a>
 
+<section id="feedback" style="padding:40px; background:#f9f9f9;">
+  <h2 style="text-align:center;">Customer Feedback</h2>
+
+  <form action="https://formspree.io/f/xwvbjjzb" method="POST" 
+        style="max-width:400px; margin:auto; background:#fff; padding:20px; border-radius:8px;">
+
+    <label>Name</label>
+    <input type="text" name="name" required 
+           style="width:100%; padding:10px; margin-bottom:10px;">
+
+    <label>Mobile Number</label>
+    <input type="tel" name="mobile" required 
+           style="width:100%; padding:10px; margin-bottom:10px;">
+
+    <label>Rating</label>
+    <select name="rating" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+      <option value="">Select</option>
+      <option>⭐⭐⭐⭐⭐ Excellent</option>
+      <option>⭐⭐⭐⭐ Very Good</option>
+      <option>⭐⭐⭐ Good</option>
+      <option>⭐⭐ Average</option>
+      <option>⭐ Poor</option>
+    </select>
+
+    <label>Feedback</label>
+    <textarea name="message" rows="4" required
+              style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
+
+    <button type="submit"
+            style="width:100%; padding:12px; background:#25D366; color:white; border:none; border-radius:5px;">
+      Submit Feedback
+    </button>
+  </form>
+</section>
 <footer>
     © 2026 SJN Mobiles | All Rights Reserved
 </footer>

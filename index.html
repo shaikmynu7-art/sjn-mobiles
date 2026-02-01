@@ -406,25 +406,20 @@
         <button>Call Now</button>
     </a>
 </section>
-<section id="enquiry" class="enquiry-section">
+    <section id="enquiry" class="enquiry-section">
   <h2>📩 Customer Enquiry</h2>
   <p class="enquiry-sub">Have a question? Send us your enquiry and we’ll contact you.</p>
 
-  <form 
-    action="https://formspree.io/f/xwvbjjzb" 
-    method="POST"
-    class="enquiry-form">
-
-    <input type="hidden" name="Shop" value="SJN Mobiles">
+  <form id="enquiryForm" class="enquiry-form">
 
     <label>Name</label>
-    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" id="name" placeholder="Your Name" required>
 
     <label>Mobile Number</label>
-    <input type="tel" name="phone" placeholder="Your Mobile Number" required>
+    <input type="tel" id="phone" placeholder="Your Mobile Number" required>
 
     <label>Enquiry Type</label>
-    <select name="enquiry">
+    <select id="type">
       <option>Mobile Purchase</option>
       <option>Repair / Service</option>
       <option>Display Replacement</option>
@@ -433,11 +428,16 @@
     </select>
 
     <label>Message</label>
-    <textarea name="message" rows="4" placeholder="Type your enquiry here..." required></textarea>
+    <textarea id="message" rows="4" placeholder="Type your enquiry here..." required></textarea>
 
     <button type="submit">Send Enquiry</button>
   </form>
+
+  <p id="thankYouMsg" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:15px;">
+    ✅ Thank you! Your enquiry has been sent.
+  </p>
 </section>
+
 <style>
     .enquiry-section {
   padding: 40px 15px;
@@ -659,6 +659,37 @@ setInterval(() => {
     offersWrapper.scrollTo({ left: 0, behavior: "smooth" });
   }
 }, 3000);
+</script>
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const type = document.getElementById("type").value;
+  const message = document.getElementById("message").value;
+
+  const whatsappMessage =
+    `Hello SJN Mobiles,%0A%0A` +
+    `👤 Name: ${name}%0A` +
+    `📞 Mobile: ${phone}%0A` +
+    `📌 Enquiry Type: ${type}%0A` +
+    `💬 Message: ${message}`;
+
+  // Show thank you message
+  document.getElementById("thankYouMsg").style.display = "block";
+
+  // Clear form
+  document.getElementById("enquiryForm").reset();
+
+  // Open WhatsApp after short delay
+  setTimeout(() => {
+    window.open(
+      `https://wa.me/919440558838?text=${whatsappMessage}`,
+      "_blank"
+    );
+  }, 800);
+});
 </script>
 
 </body>

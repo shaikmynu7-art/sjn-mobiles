@@ -84,11 +84,11 @@
         at affordable prices for everyone.
     </p>
 </section>
-    <section>
+<section>
   <h2 style="text-align:center;">📸 Our Shop Photos</h2>
 
   <div class="slider-container">
-    <div class="slider-track">
+    <div class="slider-track" id="sliderTrack">
       <img src="shop1.jpg" alt="Shop Photo 1">
       <img src="shop2.jpg" alt="Shop Photo 2">
       <img src="shop3.jpg" alt="Shop Photo 3">
@@ -97,39 +97,31 @@
     </div>
   </div>
 </section>
+
     
 <style>
 .slider-container {
-  width: 75%;
+  width: 100%;
   overflow: hidden;
-  margin: auto;
+  max-width: 100%;
 }
 
 .slider-track {
   display: flex;
-  gap: 10px;
-  animation: scroll 18s linear infinite;
+  transition: transform 0.6s ease-in-out;
 }
 
 .slider-track img {
   width: calc(100% / 3);
-  border-radius: 10px;
   flex-shrink: 0;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-/* Mobile view */
+/* Mobile */
 @media (max-width: 768px) {
   .slider-track img {
     width: 100%;
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }
 </style>
@@ -320,5 +312,25 @@ function checkShopStatus() {
 
 checkShopStatus();
 </script>
+<script>
+let currentIndex = 0;
+const track = document.getElementById("sliderTrack");
+const totalImages = 5;
+const visibleImages = 3;
+
+function slideImages() {
+  currentIndex++;
+
+  if (currentIndex > totalImages - visibleImages) {
+    currentIndex = 0;
+  }
+
+  const translateX = -(currentIndex * (100 / visibleImages));
+  track.style.transform = `translateX(${translateX}%)`;
+}
+
+setInterval(slideImages, 3000);
+</script>
+
 </body>
 </html>

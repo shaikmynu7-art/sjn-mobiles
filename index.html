@@ -85,16 +85,54 @@
     </p>
 </section>
     <section>
-    <h2>📸 Our Shop Photos</h2>
+  <h2 style="text-align:center;">📸 Our Shop Photos</h2>
 
-    <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-        <img src="shop1.jpg." alt="SJN Mobiles Shop Front" style="width:300px; border-radius:8px;">
-        <img src="shop2.jpg" alt="Inside SJN Mobiles Shop" style="width:300px; border-radius:8px;">
-        <img src="shop3.jpg" alt="Mobile Repair at SJN Mobiles" style="width:300px; border-radius:8px;">
-        <img src="shop4.jpg" alt="SJN Mobiles outside" style="width:300px; border-radius:8px;">
-        <img src="shop5.jpg" alt="SJN Mobiles outside 2" style="width:300px; border-radius:8px;">
+  <div class="slider-container">
+    <div class="slider">
+      <img src="shop1.jpg" alt="SJN Mobiles Shop Photo 1">
+      <img src="shop2.jpg" alt="SJN Mobiles Shop Photo 2">
+      <img src="shop3.jpg" alt="SJN Mobiles Shop Photo 3">
+      <img src="shop4.jpg" alt="SJN Mobiles Shop Photo 4">
+      <img src="shop5.jpg" alt="SJN Mobiles Shop Photo 5">
     </div>
+  </div>
 </section>
+
+<style>
+.slider-container {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  animation: slide 20s infinite;
+}
+
+.slider img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+
+  25%  { transform: translateX(-100%); }
+  45%  { transform: translateX(-100%); }
+
+  50%  { transform: translateX(-200%); }
+  70%  { transform: translateX(-200%); }
+
+  75%  { transform: translateX(-300%); }
+  95%  { transform: translateX(-300%); }
+}
+</style>
 <section style="border:2px dashed #e84118; background:#fff5f5;">
     <h2 style="color:#e84118;"> Special Offers</h2>
 

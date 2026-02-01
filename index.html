@@ -203,73 +203,63 @@
 </section>
 <style>
  .offers-unique {
-  padding: 30px 10px;
-  background: linear-gradient(135deg, #fff1eb, #ffe6d5);
+  padding: 25px 10px;
+  background: #fff5f0;
 }
 
 .offers-unique h2 {
   text-align: center;
   color: #e84118;
-  margin-bottom: 15px;
 }
 
 .offers-wrapper {
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;              /* ✅ allow horizontal scroll */
+  scroll-behavior: smooth;
+}
+
+.offers-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .offers-track {
   display: flex;
-  gap: 18px;
-  transition: transform 0.6s ease;
+  gap: 15px;
+  padding: 15px 5px;
 }
 
 .offer-card {
   min-width: 220px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 18px 15px;
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
   text-align: center;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
   flex-shrink: 0;
 }
 
 .offer-icon {
-  width: 55px;
-  height: 55px;
-  margin: auto;
+  width: 50px;
+  height: 50px;
   background: #e84118;
   color: white;
-  font-size: 28px;
   border-radius: 50%;
+  font-size: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-}
-
-.offer-card h4 {
-  font-size: 16px;
-  margin: 6px 0;
-}
-
-.offer-card p {
-  font-size: 13px;
-  color: #555;
-  margin: 4px 0;
+  margin: auto auto 8px;
 }
 
 .offer-card strong {
   color: #c23616;
-  font-size: 14px;
 }
 
 .limited-note {
   text-align: center;
   font-weight: bold;
   color: #c23616;
-  margin-top: 15px;
 }
+
 </style>
 
 
@@ -539,6 +529,23 @@ setInterval(() => {
     offerIndex = 0;
   }
   track.style.transform = `translateX(-${offerIndex * cardWidth}px)`;
+}, 3000);
+</script>
+<script>
+const wrapper = document.getElementById("offersWrapper");
+
+setInterval(() => {
+  wrapper.scrollBy({
+    left: 240,
+    behavior: "smooth"
+  });
+
+  if (
+    wrapper.scrollLeft + wrapper.clientWidth >=
+    wrapper.scrollWidth
+  ) {
+    wrapper.scrollTo({ left: 0, behavior: "smooth" });
+  }
 }, 3000);
 </script>
 

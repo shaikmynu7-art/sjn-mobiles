@@ -88,17 +88,54 @@
   <h2 style="text-align:center;">📸 Our Shop Photos</h2>
 
   <div class="slider-container">
-    <div class="slider">
-      <img src="shop1.jpg" alt="SJN Mobiles Shop Photo 1">
-      <img src="shop2.jpg" alt="SJN Mobiles Shop Photo 2">
-      <img src="shop3.jpg" alt="SJN Mobiles Shop Photo 3">
-      <img src="shop4.jpg" alt="SJN Mobiles Shop Photo 4">
-      <img src="shop5.jpg" alt="SJN Mobiles Shop Photo 5">
+    <div class="slider-track">
+      <img src="shop1.jpg" alt="Shop Photo 1">
+      <img src="shop2.jpg" alt="Shop Photo 2">
+      <img src="shop3.jpg" alt="Shop Photo 3">
+      <img src="shop4.jpg" alt="Shop Photo 4">
+      <img src="shop5.jpg" alt="Shop Photo 5">
     </div>
   </div>
 </section>
 
+
 <style>
+<style>
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slider-track {
+  display: flex;
+  gap: 10px;
+  animation: scroll 18s linear infinite;
+}
+
+.slider-track img {
+  width: calc(100% / 3);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .slider-track img {
+    width: 100%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
 .slider-container {
   width: 100%;
   max-width: 350px;

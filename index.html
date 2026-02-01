@@ -113,15 +113,19 @@
 
 .slider-track img {
   width: calc(100% / 3);
+  height: 220px;              /* Adjust height here */
+  object-fit: cover;          /* Crop nicely */
   flex-shrink: 0;
   border-radius: 10px;
   padding: 5px;
 }
 
+
 /* Mobile */
 @media (max-width: 768px) {
   .slider-track img {
     width: 100%;
+    height: 180px;
   }
 }
 </style>

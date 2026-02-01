@@ -158,48 +158,100 @@
     <p style="font-weight:bold; color:#c23616;">
         ⏳ Limited Time Offer – Please Visit Soon!
     </p>
-</section>
-<section class="services">
+    
+<section class="services-horizontal">
   <h2>🛠️ Our Services</h2>
 
-  <div class="services-grid">
-    <div class="service-card">
+  <div class="services-row">
+    <div class="service-box">
       <span>📱</span>
       <h3>Mobile Sales</h3>
-      <p>New & used smartphones at affordable village prices.</p>
+      <p>New & used mobiles</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-box">
       <span>🔧</span>
       <h3>Mobile Repair</h3>
-      <p>Display, battery, charging & software issue fixing.</p>
+      <p>Display, battery, charging</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-box">
       <span>🔄</span>
-      <h3>Buy & Sell Mobiles</h3>
-      <p>Exchange old mobiles and get best value instantly.</p>
+      <h3>Buy & Sell</h3>
+      <p>Old mobile exchange</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-box">
       <span>📶</span>
       <h3>SIM & Recharge</h3>
-      <p>All network SIM cards, recharge & data packs.</p>
+      <p>All networks available</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-box">
       <span>🎧</span>
       <h3>Accessories</h3>
-      <p>Chargers, cables, earphones, covers & tempered glass.</p>
+      <p>Chargers, covers, glass</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-box">
       <span>💻</span>
-      <h3>Software Services</h3>
-      <p>Data transfer, updates, apps install & phone reset.</p>
+      <h3>Software Help</h3>
+      <p>Updates & data transfer</p>
     </div>
   </div>
 </section>
+<style>
+    .services-horizontal {
+  padding: 30px 15px;
+  background: #f9f9f9;
+}
+
+.services-horizontal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.services-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.services-row::-webkit-scrollbar {
+  display: none;
+}
+
+.service-box {
+  min-width: 180px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.service-box span {
+  font-size: 36px;
+}
+
+.service-box h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.service-box p {
+  font-size: 13px;
+  color: #555;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+</style>
 
 <section>
     <h2>Customer Reviews</h2>

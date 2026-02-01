@@ -405,133 +405,185 @@
     <a href="tel:+919440558838">
         <button>Call Now</button>
     </a>
+<section class="customer-forms">
+  <h2>💬 Talk To Us</h2>
+
+  <div class="forms-grid">
+
+    <!-- ENQUIRY CARD -->
+    <div class="form-card enquiry-card">
+      <h3>📩 Customer Enquiry</h3>
+      <p>Ask about mobiles, repairs or offers</p>
+
+      <form id="enquiryForm">
+        <input type="text" id="enqName" placeholder="Your Name" required>
+        <input type="tel" id="enqPhone" placeholder="Mobile Number" required>
+
+        <select id="enqType">
+          <option>Mobile Purchase</option>
+          <option>Repair / Service</option>
+          <option>Display Replacement</option>
+          <option>Accessories</option>
+          <option>Other</option>
+        </select>
+
+        <textarea id="enqMsg" rows="3" placeholder="Your enquiry..." required></textarea>
+
+        <button type="submit">Send Enquiry</button>
+      </form>
+
+      <p class="thankyou" id="enqThanks">✅ Thank you! WhatsApp will open.</p>
+    </div>
+
+    <!-- FEEDBACK CARD -->
+    <div class="form-card feedback-card">
+      <h3>⭐ Customer Feedback</h3>
+      <p>Your feedback helps us improve</p>
+
+      <form action="https://formspree.io/f/xwvbjjzb" method="POST" target="_blank">
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <select name="rating" required>
+          <option value="">Rating</option>
+          <option>⭐⭐⭐⭐⭐ Excellent</option>
+          <option>⭐⭐⭐⭐ Very Good</option>
+          <option>⭐⭐⭐ Good</option>
+          <option>⭐⭐ Average</option>
+          <option>⭐ Poor</option>
+        </select>
+
+        <textarea name="message" rows="3" placeholder="Your feedback..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+
+      <p class="thankyou">🙏 Thank you for your feedback!</p>
+    </div>
+
+  </div>
 </section>
-    <section id="enquiry" class="enquiry-section">
-  <h2>📩 Customer Enquiry</h2>
-  <p class="enquiry-sub">Have a question? Send us your enquiry and we’ll contact you.</p>
-
-  <form id="enquiryForm" class="enquiry-form">
-
-    <label>Name</label>
-    <input type="text" id="name" placeholder="Your Name" required>
-
-    <label>Mobile Number</label>
-    <input type="tel" id="phone" placeholder="Your Mobile Number" required>
-
-    <label>Enquiry Type</label>
-    <select id="type">
-      <option>Mobile Purchase</option>
-      <option>Repair / Service</option>
-      <option>Display Replacement</option>
-      <option>Accessories</option>
-      <option>Other</option>
-    </select>
-
-    <label>Message</label>
-    <textarea id="message" rows="4" placeholder="Type your enquiry here..." required></textarea>
-
-    <button type="submit">Send Enquiry</button>
-  </form>
-
-  <p id="thankYouMsg" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:15px;">
-    ✅ Thank you! Your enquiry has been sent.
-  </p>
-</section>
-
 <style>
-    .enquiry-section {
+.customer-forms {
   padding: 40px 15px;
-  background: linear-gradient(135deg, #eef2ff, #fdfbfb);
+  background: linear-gradient(135deg, #f4f6f8, #eef3f7);
 }
 
-.enquiry-section h2 {
+.customer-forms h2 {
   text-align: center;
+  margin-bottom: 25px;
   color: #0a3d62;
 }
 
-.enquiry-sub {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.enquiry-form {
-  max-width: 420px;
+.forms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
   margin: auto;
-  background: white;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 18px;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  position: relative;
 }
 
-.enquiry-form label {
-  font-weight: bold;
-  margin-top: 10px;
-  display: block;
+.enquiry-card {
+  border-top: 6px solid #25D366;
 }
 
-.enquiry-form input,
-.enquiry-form select,
-.enquiry-form textarea {
+.feedback-card {
+  border-top: 6px solid #fbc531;
+}
+
+.form-card h3 {
+  margin-bottom: 5px;
+}
+
+.form-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
   width: 100%;
-  padding: 12px;
-  margin-top: 5px;
+  padding: 10px;
   margin-bottom: 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.enquiry-form button {
+.form-card button {
   width: 100%;
   padding: 12px;
-  background: #25D366;
-  color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
 }
 
-.enquiry-form button:hover {
-  background: #1ebe5b;
+.enquiry-card button {
+  background: #25D366;
+  color: #fff;
+}
+
+.feedback-card button {
+  background: #fbc531;
+  color: #333;
+}
+
+.form-card button:hover {
+  opacity: 0.9;
+}
+
+.thankyou {
+  display: none;
+  margin-top: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: green;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .forms-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
-<section id="feedback" style="padding:40px; background:#f9f9f9;">
-  <h2 style="text-align:center;">Customer Feedback</h2>
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  <form action="https://formspree.io/f/xwvbjjzb" method="POST" 
-        style="max-width:400px; margin:auto; background:#fff; padding:20px; border-radius:8px;">
+  const name = document.getElementById("enqName").value;
+  const phone = document.getElementById("enqPhone").value;
+  const type = document.getElementById("enqType").value;
+  const msg = document.getElementById("enqMsg").value;
 
-    <label>Name</label>
-    <input type="text" name="name" required 
-           style="width:100%; padding:10px; margin-bottom:10px;">
+  const text =
+    `Hello SJN Mobiles,%0A%0A` +
+    `👤 Name: ${name}%0A` +
+    `📞 Mobile: ${phone}%0A` +
+    `📌 Enquiry: ${type}%0A` +
+    `💬 Message: ${msg}`;
 
-    <label>Mobile Number</label>
-    <input type="tel" name="mobile" required 
-           style="width:100%; padding:10px; margin-bottom:10px;">
+  document.getElementById("enqThanks").style.display = "block";
+  document.getElementById("enquiryForm").reset();
 
-    <label>Rating</label>
-    <select name="rating" required 
-            style="width:100%; padding:10px; margin-bottom:10px;">
-      <option value="">Select</option>
-      <option>⭐⭐⭐⭐⭐ Excellent</option>
-      <option>⭐⭐⭐⭐ Very Good</option>
-      <option>⭐⭐⭐ Good</option>
-      <option>⭐⭐ Average</option>
-      <option>⭐ Poor</option>
-    </select>
-
-    <label>Feedback</label>
-    <textarea name="message" rows="4" required
-              style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
-
-    <button type="submit"
-            style="width:100%; padding:12px; background:#25D366; color:white; border:none; border-radius:5px;">
-      Submit Feedback
-    </button>
-  </form>
-</section>
+  setTimeout(() => {
+    window.open(
+      `https://wa.me/919440558838?text=${text}`,
+      "_blank"
+    );
+  }, 700);
+});
+</script>    
 <footer>
     © 2026 SJN Mobiles | All Rights Reserved
 </footer>

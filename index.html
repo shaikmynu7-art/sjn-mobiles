@@ -131,33 +131,93 @@
 </style>
 
 <section style="border:2px dashed #e84118; background:#fff5f5;">
-    <h2 style="color:#e84118;"> Special Offers</h2>
+<section class="special-offers">
+  <h2>🔥 Special Offers</h2>
 
-    <ul style="font-size:16px;">
-         <li>🎁 Any display replacement & get a <strong>FREE Neckband</strong></li>
-  <li>🎧 Any LED mobile display replacement & get <strong>AirPods FREE</strong></li>
-  <li>🛡️ Gorilla Tempered Glass just at <strong>₹89/- only</strong></li>
-  <li>✨ UV Tempered Glass just at <strong>₹199/- only</strong></li>
-  <li>🔌 80W Cable just at <strong>₹149/- only</strong></li>
-  <li>📱 Any normal display replacement just at <strong>₹1299 – ₹1799/- only</strong></li>
-  <li>
-    🎉 Weekly <strong>Lucky Draw</strong> – Win a <strong>FREE Neckband</strong><br>
-    <small>(Minimum purchase above ₹500/-)</small>
-  </li>
-    <li>
-    📣 Promote our shop & get a <strong>FREE Tempered Glass</strong> or 
-    <strong>Mobile Back Case Skin</strong><br>
-    <small>
-      (Referred customer must make a purchase. 
-      Promoted customer must buy anything from our shop for eligibility)
-    </small>
-  </li>
-  <li>📶 <strong>FREE Wi-Fi</strong> available for customers</li>
-    </ul>
+  <div class="offers-slider">
+    <div class="offers-track" id="offersTrack">
 
-    <p style="font-weight:bold; color:#c23616;">
-        ⏳ Limited Time Offer – Please Visit Soon!
-    </p>
+      <div class="offer-item">🎁 Any display replacement & <strong>FREE Neckband</strong></div>
+
+      <div class="offer-item">🎧 Any LED display replacement & <strong>AirPods FREE</strong></div>
+
+      <div class="offer-item">🛡️ Gorilla Tempered Glass <strong>₹89/- only</strong></div>
+
+      <div class="offer-item">✨ UV Tempered Glass <strong>₹199/- only</strong></div>
+
+      <div class="offer-item">🔌 80W Cable <strong>₹149/- only</strong></div>
+
+      <div class="offer-item">📱 Normal display <strong>₹1299 – ₹1799</strong></div>
+
+      <div class="offer-item">
+        🎉 Weekly <strong>Lucky Draw</strong><br>
+        <small>(Min purchase ₹500)</small>
+      </div>
+
+      <div class="offer-item">
+        📣 Promote shop & get <strong>FREE Glass / Skin</strong><br>
+        <small>(Purchase required)</small>
+      </div>
+
+      <div class="offer-item">📶 <strong>FREE Wi-Fi</strong> for customers</div>
+
+    </div>
+  </div>
+
+  <p class="limited-text">⏳ Limited Time Offer – Please Visit Soon!</p>
+</section>
+<style>
+    .special-offers {
+  padding: 25px 10px;
+  background: #fff5f0;
+}
+
+.special-offers h2 {
+  text-align: center;
+  color: #e84118;
+  margin-bottom: 10px;
+}
+
+.offers-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.offers-track {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.offer-item {
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.offer-item strong {
+  color: #c23616;
+}
+
+.offer-item small {
+  font-size: 12px;
+  color: #555;
+}
+
+.limited-text {
+  text-align: center;
+  font-weight: bold;
+  color: #c23616;
+  margin-top: 12px;
+}
+
+</style>
+
+
     
 <section class="services-horizontal">
   <h2>🛠️ Our Services</h2>
@@ -412,6 +472,22 @@ function slideImages() {
 }
 
 setInterval(slideImages, 3000);
+</script>
+<script>
+let offerIndex = 0;
+const offerTrack = document.getElementById("offersTrack");
+const offerItems = document.querySelectorAll(".offer-item");
+const visibleOffers = 1;
+
+function slideOffers() {
+  offerIndex++;
+  if (offerIndex > offerItems.length - visibleOffers) {
+    offerIndex = 0;
+  }
+  offerTrack.style.transform = `translateX(-${offerIndex * 275}px)`;
+}
+
+setInterval(slideOffers, 3000);
 </script>
 
 </body>
